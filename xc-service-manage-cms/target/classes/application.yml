@@ -1,0 +1,22 @@
+server:
+  port: 31001
+spring:
+  application:
+    name: xc-service-manage-cms
+  data:
+    mongodb:
+      uri:  mongodb://localhost:27017
+      database: xc_cms
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: ${EUREKA_SERVER:http://eureka01:9001/eureka/}
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${server.port}
+    ip-address: ${IP_ADDRESS:127.0.0.1}
+feign:
+  hystrix:
+    enabled: true
