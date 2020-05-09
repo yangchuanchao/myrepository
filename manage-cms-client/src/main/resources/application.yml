@@ -1,0 +1,15 @@
+server:
+  port: 10080
+spring:
+  application:
+    name: manage-cms-client
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: false
+    service-url:
+      defaultZone:http://eureka01:9001/eureka/
+  instance:
+    instance-id: ${spring.application.name}:${server.port}
+    prefer-ip-address: true
+    ip-address: ${IP_ADDRESS:127.0.0.1}
