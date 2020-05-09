@@ -1,0 +1,3 @@
+git remote add origin git@github.com:yangchuanchao/myrepository.git
+git remote rm origin
+git push -f origin master
